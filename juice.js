@@ -3,6 +3,8 @@ const simRetsa = "-";
 const simMultiplicar = "*";
 const simDividir = "/";
 const result1 = document.querySelector("#result1");
+const result2 = document.querySelector('#result2');
+const val = document.querySelector('#valores');
 //Consultamos números y agregamos a la pantalla de la calculadora al hacer click
 const one = document.querySelector('#uno');
 const two = document.querySelector('#dos');
@@ -19,6 +21,7 @@ const restar = document.querySelector('#resta');
 const multiplica = document.querySelector('#multiplicar');
 const divide = document.querySelector('#dividir');
 const borrar = document.querySelector('#reset');
+const igual = document.querySelector('#equal');
 
 
 switch(one){
@@ -32,40 +35,54 @@ switch(one){
     case eight: numero(eight);
     case nine: numero(nine);
     case puntar: numero(puntar);
-    case sumar: numero(sumar);
-    case restar: numero(restar);
-    case multiplica: numero(multiplica);
-    case divide: numero(divide);
+    case sumar: operando(sumar);
+    case restar: operando(restar);
+    case multiplica: operando(multiplica);
+    case divide: operando(divide);
     case borrar: resetear(borrar);
+    //TODO: Crear función para que al dar click aquí, aparezca el resultado.
+    case igual: operando(igual);
 }
+
+//Objeto que contiene números
+const numeros = {
+    uno: one.textContent,
+    dos: two.textContent,
+    tres: three.textContent,
+    cuatro: four.textContent,
+    cinco: five.textContent,
+    seis: six.textContent,
+    siete: seven.textContent,
+    ocho: eight.textContent,
+    nueve: nine.textContent,
+}
+console.table(numeros);
 
 
 //Funcion para resetear
 function resetear(valor){
     valor.addEventListener('click', () => {
-        result1.textContent = "";
+        valores.textContent  = "";
     });
 }
 
-
-//Funcion para escribir en pantalla de la calculadora
-function numero(number){
-    number.addEventListener('click', () => {
-        result1.textContent += number.textContent;
-    }); 
+//Funcion para escribir el operador
+function operando(o){
+  o.addEventListener('click', (e) => {
+    valores.textContent = o.textContent;
+  });
 }
 
-console.log(result1.textContent);
-
+//TODO: Funcion para escribir en pantalla de la calculadora
+function numero(number){
+    number.addEventListener('click', () => {
+        valores.textContent += number.textContent;
+    });
+}
 
 //TODO: Cambiar la función para llamar a la operación
-
-console.log(operacion(simSuma, 122, 23));
-
-function operacion(operador, a, b){
-    if(operador === simSuma){
+function operacion(a, b){
     return suma(a, b);
-    }
 }
 
 function suma(a, b){

@@ -24,13 +24,23 @@
     float: left;
     justify-content: right;
     background-color: white;
-    font-size: 50px;
+    font-size: 30px;
+    display: flex;
 }
+#result1 p{
+    background-color: white;
+    font-size: 30px;
+}
+
 #result2{
     float: right;
     background-color: white;
     justify-content: right;
-    font-size: 50px;
+    font-size: 30px;
+}
+#result2 p{
+    background-color: white;
+    font-size: 30px;
 }
 
 .botones{
