@@ -1,6 +1,8 @@
+var a;
+var b;
+var operacion;
 const val = document.querySelector('#valores');
-const result = document.querySelector('#resultado');
-//Consultamos números y agregamos a la pantalla de la calculadora al hacer click
+const finalResult = document.querySelector("#resultFinal");
 const one = document.querySelector('#uno');
 const two = document.querySelector('#dos');
 const three = document.querySelector('#tres');
@@ -10,72 +12,97 @@ const six = document.querySelector('#seis');
 const seven = document.querySelector('#siete');
 const eight = document.querySelector('#ocho');
 const nine = document.querySelector('#nueve');
-const puntar = document.querySelector('#punto');
 const sumar = document.querySelector('#suma');
 const restar = document.querySelector('#resta');
-const multiplica = document.querySelector('#multiplicar');
+const multiply = document.querySelector('#multiplicar');
 const divide = document.querySelector('#dividir');
+const point = document.querySelector('#punto');
 const borrar = document.querySelector('#reset');
 const igual = document.querySelector('#equal');
-
-switch(one){
-     case one: numero(one);
-     case two: numero(two);
-     case three: numero(three);
-     case four: numero(four);
-     case five: numero(five);
-     case six: numero(six);
-     case seven: numero(seven);
-     case eight: numero(eight);
-     case nine: numero(nine);
-     case puntar: numero(puntar);
-     case sumar: operando(sumar);
-     case restar: operando(restar);
-     case multiplica: operando(multiplica);
-     case divide: operando(divide);
-     case borrar: resetear(borrar);
-}
-
-igual.addEventListener('click', () => {
-    result.textContent = valorOne(val1) + valorOne(val1);
-    console.log(result);
-});
-
-let val1 = 0;
-function numero(number){
-    number.addEventListener('click', (e) => {
-        val.textContent += e.target.textContent;
-        val1 = parseFloat(val.textContent);
-        //Intento de conseguir los valores ingresados
-        valorOne(val1);
-        valorTwo(val1);
-        console.log(valorOne(val1) + ": Valor 1");
-        console.log(valorTwo(val1) + ": Valor 2");
-        return val1;
+    
+    one.addEventListener('click', (e) => {
+        val.textContent += "1";
     });
-}
-
-function valorOne(numero){
-    let valor = numero;
-    return valor;
-}
-function valorTwo(numero){
-    let valor2 = numero;
-    return valor2;
-}
-
-
-//Funcion para resetear
-function resetear(valor){
-    valor.addEventListener('click', () => {
-        val.textContent  = "";
-        result.textContent = "0";
+    two.addEventListener('click', (e) => {
+        val.textContent += "2";
     });
+    three.addEventListener('click', (e) => {
+        val.textContent += "3";
+    });
+    four.addEventListener('click', (e) => {
+        val.textContent += "4";
+    });
+    five.addEventListener('click', (e) => {
+        val.textContent += "5";
+    });
+    six.addEventListener('click', (e) => {
+        val.textContent += "6";
+    });
+    seven.addEventListener('click', (e) => {
+        val.textContent += "7";
+    });
+    eight.addEventListener('click', (e) => {
+        val.textContent += "8";
+    });
+    nine.addEventListener('click', (e) => {
+        val.textContent += "9";
+    });
+    sumar.addEventListener('click', (e) => {
+        a = val.textContent;
+        operacion = "+";
+        clear();
+    });
+    restar.addEventListener('click', (e) => {
+        a = val.textContent;
+        operacion = "-";
+        clear();
+    });
+    multiply.addEventListener('click', (e) => {
+        a = val.textContent;
+        operacion = "*";
+        clear();
+    });
+    divide.addEventListener('click', (e) => {
+        a = val.textContent;
+        operacion = "/";
+        clear();
+    });
+    borrar.addEventListener('click', (e) => {
+        resetear();
+    });
+    point.addEventListener('click', (e) => {
+        val.textContent += ".";
+    });
+    igual.addEventListener('click', (e) => {
+        b = val.textContent;
+        calculos();
+    });
+
+
+function calculos(){
+    let res = 0;
+    switch(operacion){
+        case "+": res = parseFloat(a) + parseFloat(b);
+        break;
+        case "-": res = parseFloat(a) - parseFloat(b);
+        break;
+        case "*": res = parseFloat(a) * parseFloat(b);
+        break;
+        case "/": res = parseFloat(a) / parseFloat(b);
+        break;
+    }
+    resetear();
+    finalResult.textContent = res;
 }
 
-//Funcion para escribir el operador
-function operando(o){
-  o.addEventListener('click', () => {
+function resetear(){
     val.textContent = "";
-  })
+    finalResult.textContent = "0";
+    a = 0;
+    b = 0;
+    operacion = ""; 
+}
+
+function clear(){
+    val.textContent = "";
 }

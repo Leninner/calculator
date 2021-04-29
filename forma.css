@@ -6,6 +6,7 @@
     background-color: rgb(25, 88, 88);
 }
 
+/* Cuadro de calculadora */
 #calculator{
     width: 400px;
     height: 550px;
@@ -13,6 +14,8 @@
     margin-left: 500px;
     border: 1px solid cadetblue;
 }
+
+/* Pantalla de resultados */
 #result{
     border: 3px solid rgb(243, 243, 243);
     margin: 10px;
@@ -20,29 +23,31 @@
     background-color: white;
     border-radius: 10px;
 }
-#result1{
+#mostrarHistoria{
     float: left;
     justify-content: right;
     background-color: white;
     font-size: 30px;
     display: flex;
 }
-#result1 label{
+#mostrarHistoria label{
     background-color: white;
     font-size: 30px;
 }
 
-#result2{
+#resultado{
     float: right;
-    background-color: white;
     justify-content: right;
+    background-color: white;
     font-size: 30px;
+    display: flex;
 }
-#result2 label{
+#resultado label{
     background-color: white;
     font-size: 30px;
 }
 
+/* Botones */
 .botones{
     width: 100px;
     height: 100px;
