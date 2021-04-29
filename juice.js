@@ -37,7 +37,7 @@ switch(one){
 }
 
 igual.addEventListener('click', () => {
-    result.textContent = val.textContent;
+    result.textContent = valorOne(val1) + valorOne(val1);
     console.log(result);
 });
 
@@ -46,9 +46,24 @@ function numero(number){
     number.addEventListener('click', (e) => {
         val.textContent += e.target.textContent;
         val1 = parseFloat(val.textContent);
-        console.log(val1);
+        //Intento de conseguir los valores ingresados
+        valorOne(val1);
+        valorTwo(val1);
+        console.log(valorOne(val1) + ": Valor 1");
+        console.log(valorTwo(val1) + ": Valor 2");
+        return val1;
     });
 }
+
+function valorOne(numero){
+    let valor = numero;
+    return valor;
+}
+function valorTwo(numero){
+    let valor2 = numero;
+    return valor2;
+}
+
 
 //Funcion para resetear
 function resetear(valor){
@@ -60,10 +75,7 @@ function resetear(valor){
 
 //Funcion para escribir el operador
 function operando(o){
-let operador = o.textContent;
   o.addEventListener('click', () => {
-    
-    valores.textContent = "";
-    return operador;
+    val.textContent = "";
   })
 }
