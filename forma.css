@@ -27,7 +27,7 @@
     font-size: 30px;
     display: flex;
 }
-#result1 p{
+#result1 label{
     background-color: white;
     font-size: 30px;
 }
@@ -38,7 +38,7 @@
     justify-content: right;
     font-size: 30px;
 }
-#result2 p{
+#result2 label{
     background-color: white;
     font-size: 30px;
 }
