@@ -12,6 +12,7 @@ const six = document.querySelector('#seis');
 const seven = document.querySelector('#siete');
 const eight = document.querySelector('#ocho');
 const nine = document.querySelector('#nueve');
+const zero = document.querySelector('#cero');
 const sumar = document.querySelector('#suma');
 const restar = document.querySelector('#resta');
 const multiply = document.querySelector('#multiplicar');
@@ -47,6 +48,19 @@ const igual = document.querySelector('#equal');
     nine.addEventListener('click', (e) => {
         val.textContent += "9";
     });
+    zero.addEventListener('click', (e) => {
+        val.textContent += "0";
+    });
+    point.addEventListener('click', (e) => {
+        let puntar = val.textContent;
+        let concidencia = puntar.indexOf(".");
+        if(concidencia !== -1){
+            alert("No puede poner más puntos");
+        }
+        else{
+            val.textContent += ".";
+        }
+    });
     sumar.addEventListener('click', (e) => {
         a = val.textContent;
         operacion = "+";
@@ -70,10 +84,10 @@ const igual = document.querySelector('#equal');
     borrar.addEventListener('click', (e) => {
         resetear();
     });
-    point.addEventListener('click', (e) => {
-        val.textContent += ".";
-    });
     igual.addEventListener('click', (e) => {
+        if(finalResult.textContent !== "0"){
+            a = finalResult.textContent;
+        }
         b = val.textContent;
         calculos();
     });
@@ -89,7 +103,15 @@ function calculos(){
         case "*": res = parseFloat(a) * parseFloat(b);
         break;
         case "/": res = parseFloat(a) / parseFloat(b);
+            if(b == 0){
+                alert("No se puede dividir entre 0");
+                resetear();
+            }
         break;
+    }
+    if(res.toString().match(/\d/g).length > 3){
+        console.log(res);
+        res = res.toFixed(3);
     }
     resetear();
     finalResult.textContent = res;
