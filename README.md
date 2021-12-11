@@ -1,1 +1,0 @@
-Proyecto basado en una calculadora.

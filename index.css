@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  padding: 1px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0c263b;
+}
+header .header-left svg {
+  width: 250px;
+  height: 100px;
+}
+header .header-right button {
+  border: none;
+  border: 2px solid #1d6bd1;
+  color: #1d6bd1;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+header .header-right button:hover {
+  background: #1d6bd1;
+  color: white;
+}
+header .header-right .active {
+  background: #1d6bd1;
+  color: white;
+}
+
+.container-calculator-mode-uno {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  margin: 10px auto;
+  border: 1px solid #42aee9;
+  border-radius: 25px;
+}
+.container-calculator-mode-uno div {
+  width: 100%;
+  word-wrap: break-word;
+}
+.container-calculator-mode-uno .calculator-header {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: 140px;
+  background-color: #0c263b;
+  border-bottom: 1px solid #42aee9;
+  text-align: right;
+  padding: 20px;
+}
+.container-calculator-mode-uno .calculator-header p {
+  margin-top: 35px;
+  color: #d0d6da;
+  font-size: 15px;
+  font-weight: 500;
+}
+.container-calculator-mode-uno .calculator-header input {
+  text-align: right;
+  width: 100%;
+  border: none;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ededed;
+  background-color: #0c263b;
+}
+.container-calculator-mode-uno .calculator-header input:focus {
+  outline: none;
+}
+.container-calculator-mode-uno .calculator-body {
+  background-color: #0b2742;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.container-calculator-mode-uno .calculator-body button {
+  width: 76px;
+  height: 70px;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s;
+  font-size: 25px;
+  color: #ededed;
+}
+.container-calculator-mode-uno .calculator-body button:hover {
+  color: #574f4f;
+}
+.container-calculator-mode-uno .calculator-body .clearCalculator {
+  color: orangered;
+}
+.container-calculator-mode-uno .calculator-body .operador {
+  color: #42aee9;
+}
+.container-calculator-mode-uno .calculator-body .ceros {
+  font-size: 15px;
+}
+.container-calculator-mode-uno .calculator-body #igual {
+  color: #d0d6da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-calculator-mode-uno .calculator-body #igual div {
+  width: 45px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #3798fe 0%, #0bb9f1 100%);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.container-calculator-mode-uno .calculator-body #igual div:hover {
+  opacity: 0.8;
+}
+
+.mode-dos {
+  border: 1px solid #b1b3b4;
+}
+.mode-dos .calculator-header {
+  background-color: #f2f2f4;
+  border-bottom: 1px solid #b1b3b4;
+}
+.mode-dos .calculator-header p {
+  color: #969191;
+}
+.mode-dos .calculator-header input {
+  color: #393939;
+  background-color: transparent;
+}
+.mode-dos .calculator-body {
+  background-color: white;
+}
+.mode-dos .calculator-body button {
+  color: #393939;
+}
+.mode-dos .calculator-body button:hover {
+  color: black;
+}
+.mode-dos .calculator-body .clearCalculator {
+  color: orangered;
+}
+.mode-dos .calculator-body .operador {
+  color: #42aee9;
+}
+.mode-dos .calculator-body #igual {
+  color: #d0d6da;
+}
+.mode-dos .calculator-body #igual div {
+  background: #3798fe;
+  background: linear-gradient(90deg, #3798fe 0%, #0bb9f1 100%);
+  border-radius: 5px;
+}
+
+.mode-tres {
+  border: 1px solid #b6b3b3;
+}
+.mode-tres .calculator-header {
+  background: linear-gradient(90deg, #14d6fc 0%, #3396fe 100%);
+  border-bottom: none;
+}
+.mode-tres .calculator-header p {
+  color: #d0d6da;
+}
+.mode-tres .calculator-header input {
+  color: #ededed;
+  background-color: transparent;
+}
+.mode-tres .calculator-body {
+  background-color: white;
+}
+.mode-tres .calculator-body button {
+  color: #393939;
+}
+.mode-tres .calculator-body button:hover {
+  color: black;
+}
+.mode-tres .calculator-body .clearCalculator {
+  color: orangered;
+}
+.mode-tres .calculator-body .operador {
+  color: #42aee9;
+}
+.mode-tres .calculator-body #igual {
+  color: #d0d6da;
+}
+.mode-tres .calculator-body #igual div {
+  background: #3798fe;
+  background: linear-gradient(90deg, #3798fe 0%, #0bb9f1 100%);
+  border-radius: 5px;
+}
+
+aside {
+  position: absolute;
+  top: 95%;
+  right: 10px;
+}
+aside p {
+  color: #393939;
+}
+
+p::selection,
+strong::selection,
+button::selection {
+  background: #ff9101;
+  color: #ededed;
+}
+
+/*# sourceMappingURL=index.css.map */
