@@ -1,7 +1,7 @@
 # Calculadora Simple
 
 - Tiene 3 modos de colores
-- Evita erorres de lógica
+- Evita errores de lógica
 
 ## Tecnologías Utilizadas
 
