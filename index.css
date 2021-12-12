@@ -98,6 +98,9 @@ header .header-right .active {
 .container-calculator-mode-uno .calculator-body .clearCalculator {
   color: orangered;
 }
+.container-calculator-mode-uno .calculator-body .delete {
+  color: #ffc400;
+}
 .container-calculator-mode-uno .calculator-body .operador {
   color: #42aee9;
 }
@@ -128,14 +131,14 @@ header .header-right .active {
   border: 1px solid #b1b3b4;
 }
 .mode-dos .calculator-header {
-  background-color: #f2f2f4;
+  background-color: #393939;
   border-bottom: 1px solid #b1b3b4;
 }
 .mode-dos .calculator-header p {
-  color: #969191;
+  color: #d0d6da;
 }
 .mode-dos .calculator-header input {
-  color: #393939;
+  color: #ededed;
   background-color: transparent;
 }
 .mode-dos .calculator-body {
@@ -216,7 +219,7 @@ button::selection {
   color: #ededed;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 750px) {
   header {
     width: 100%;
     display: flex;
@@ -234,6 +237,14 @@ button::selection {
   header .header-right nav {
     display: flex;
     justify-content: space-between;
+  }
+  header .header-right nav button {
+    width: 100px;
+    height: 40px;
+    transition: 0.3s;
+    font-size: 12px;
+    padding: 0;
+    font-weight: bold;
   }
 
   .container-calculator-mode-uno {

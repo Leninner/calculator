@@ -45,6 +45,7 @@ const equal = document.querySelector('section #igual');
 const clear = document.querySelector('section .clearCalculator');
 const resumeData = document.querySelector('.calculator-header p');
 const result = document.querySelector('section #result');
+const deleteOne = document.querySelector('section .delete');
 
 const sumar = (a, b) => parseFloat((a + b).toFixed(2));
 const restar = (a, b) => parseFloat((a - b).toFixed(2));
@@ -55,6 +56,10 @@ const percent = (a, b) => parseFloat((a * (b / 100)).toFixed(2));
 let values = [];
 
 // TODO: Analizar los bugs que se presentan al momento de realizar operaciones
+
+deleteOne.addEventListener('click', () => {
+  result.value = result.value.slice(0, -1);
+});
 
 numbers.forEach((number) => {
   number.addEventListener('click', () => {

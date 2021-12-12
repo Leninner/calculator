@@ -121,6 +121,10 @@ header {
       color: orangered;
     }
 
+    .delete {
+      color: rgb(255, 196, 0);
+    }
+
     .operador {
       color: $blue-light;
     }
@@ -158,15 +162,15 @@ header {
   border: 1px solid #b1b3b4;
 
   .calculator-header {
-    background-color: $very-light-grey;
+    background-color: $black;
     border-bottom: 1px solid #b1b3b4;
 
     p {
-      color: rgb(150, 145, 145);
+      color: $white-light;
     }
 
     input {
-      color: $black;
+      color: $white;
       background-color: transparent;
     }
   }
@@ -285,6 +289,14 @@ button::selection {
       nav {
         display: flex;
         justify-content: space-between;
+        button {
+          width: 100px;
+          height: 40px;
+          transition: 0.3s;
+          font-size: 12px;
+          padding: 0;
+          font-weight: bold;
+        }
       }
     }
   }
